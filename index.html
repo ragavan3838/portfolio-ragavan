@@ -1,0 +1,1775 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ragavan A | UI/UX Designer</title>
+
+    <!-- =========================
+         CSS
+    ========================== -->
+    <style>
+
+        /* ---------- RESET ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b12;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ---------- VARIABLES ---------- */
+
+        :root {
+            --background: #0b0b12;
+            --background-light: #12121c;
+            --card: #171722;
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --text: #ffffff;
+            --text-light: #a1a1aa;
+            --border: #292936;
+        }
+
+
+        /* ---------- NAVBAR ---------- */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(11, 11, 18, 0.95);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .menu-button {
+            display: none;
+
+            border: none;
+            background: none;
+
+            color: white;
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 100vh;
+
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 150px 25px 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hello {
+            color: var(--primary-light);
+
+            font-size: 13px;
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 8vw, 80px);
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero h2 {
+            color: #d4d4d8;
+
+            font-size: 30px;
+
+            margin-top: 10px;
+        }
+
+        .hero-description {
+            color: var(--text-light);
+
+            font-size: 17px;
+
+            margin: 20px 0 30px;
+
+            max-width: 600px;
+        }
+
+
+        /* ---------- BUTTONS ---------- */
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 7px;
+
+            border: 1px solid var(--primary);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-button {
+            background: var(--primary);
+        }
+
+        .primary-button:hover {
+            background: var(--primary-light);
+
+            transform: translateY(-3px);
+        }
+
+        .secondary-button:hover {
+            background: var(--primary);
+        }
+
+
+        /* ---------- SOCIAL ---------- */
+
+        .social-links {
+            display: flex;
+
+            gap: 25px;
+
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-light);
+        }
+
+
+        /* ---------- HERO DESIGN ---------- */
+
+        .hero-design {
+            width: 280px;
+            height: 280px;
+
+            border: 2px solid var(--primary);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 0 40px rgba(139, 92, 246, 0.25);
+
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .hero-design-inner {
+            width: 190px;
+            height: 190px;
+
+            border: 1px dashed var(--primary-light);
+
+            border-radius: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transform: rotate(12deg);
+        }
+
+        .hero-design-text {
+            transform: rotate(-12deg);
+
+            color: var(--primary-light);
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        /* ---------- SECTIONS ---------- */
+
+        section {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 100px 25px;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .section-heading p {
+            color: var(--primary-light);
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+
+            margin-top: 5px;
+        }
+
+
+        /* ---------- ABOUT ---------- */
+
+        .about-container {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr;
+
+            gap: 60px;
+        }
+
+        .about-text h3 {
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+
+            margin-bottom: 15px;
+        }
+
+        .education-box {
+            margin-top: 30px;
+
+            background: var(--card);
+
+            border-left: 3px solid var(--primary);
+
+            border-radius: 8px;
+
+            padding: 25px;
+        }
+
+        .education-box span {
+            color: var(--primary-light);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+        .education-box h4 {
+            font-size: 19px;
+
+            margin-top: 10px;
+        }
+
+        .education-box p {
+            margin: 5px 0;
+        }
+
+        .cgpa {
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+
+        /* ---------- ABOUT CARD ---------- */
+
+        .about-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            align-self: center;
+
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--primary);
+        }
+
+        .about-icon {
+            font-size: 65px;
+
+            color: var(--primary);
+
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: var(--text-light);
+
+            margin-top: 10px;
+        }
+
+
+        /* ---------- SKILLS ---------- */
+
+        .skills-container {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--primary);
+
+            background: #1b1b29;
+        }
+
+        .skill h3 {
+            color: var(--primary-light);
+
+            margin-bottom: 12px;
+        }
+
+        .skill p {
+            color: var(--text-light);
+
+            font-size: 14px;
+        }
+
+
+        /* ---------- PROJECTS ---------- */
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            padding: 35px;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--primary);
+        }
+
+        .project-number {
+            font-size: 50px;
+
+            color: var(--primary);
+
+            opacity: 0.4;
+
+            font-weight: bold;
+        }
+
+        .project h3 {
+            font-size: 24px;
+
+            margin: 10px 0;
+        }
+
+        .project p {
+            color: var(--text-light);
+
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            background: #242435;
+
+            color: var(--primary-light);
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+        }
+
+        .project-link {
+            color: var(--primary-light);
+
+            font-weight: bold;
+        }
+
+
+        /* ---------- EXPERIENCE ---------- */
+
+        .experience {
+            background: var(--card);
+
+            border-left: 3px solid var(--primary);
+
+            border-radius: 10px;
+
+            padding: 35px;
+
+            display: grid;
+
+            grid-template-columns: 170px 1fr;
+
+            gap: 30px;
+        }
+
+        .experience-date {
+            color: var(--primary-light);
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .experience h3 {
+            font-size: 24px;
+        }
+
+        .experience h4 {
+            color: var(--primary-light);
+
+            margin: 5px 0 15px;
+        }
+
+        .experience ul {
+            color: var(--text-light);
+
+            padding-left: 20px;
+        }
+
+        .experience li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- ACHIEVEMENT ---------- */
+
+        .achievement {
+            max-width: 1050px;
+
+            margin: 0 auto 100px;
+
+            padding: 45px;
+
+            background: var(--background-light);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .achievement-label {
+            color: var(--primary-light);
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+        }
+
+        .achievement h2 {
+            font-size: 27px;
+
+            margin: 10px 0;
+        }
+
+        .achievement p {
+            color: var(--text-light);
+        }
+
+        .award {
+            font-size: 70px;
+        }
+
+
+        /* ---------- CONTACT ---------- */
+
+        .contact-container {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: var(--text-light);
+
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item strong {
+            color: var(--primary-light);
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+        }
+
+
+        /* ---------- FORM ---------- */
+
+        form {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 13px;
+
+            background: var(--background);
+
+            color: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 7px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--text-light);
+
+            font-size: 13px;
+        }
+
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 850px) {
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: var(--background);
+
+                flex-direction: column;
+
+                align-items: center;
+
+                padding: 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .hero-design {
+                width: 210px;
+                height: 210px;
+            }
+
+            .hero-design-inner {
+                width: 140px;
+                height: 140px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement {
+                margin: 20px 20px 70px;
+
+                padding: 30px;
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="#home" class="logo">
+                Ragavan<span>.</span>
+            </a>
+
+            <button
+                class="menu-button"
+                onclick="toggleMenu()">
+
+                ☰
+
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home" onclick="closeMenu()">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about" onclick="closeMenu()">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills" onclick="closeMenu()">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects" onclick="closeMenu()">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#experience" onclick="closeMenu()">
+                        Experience
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" onclick="closeMenu()">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hello">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                Ragavan <span>A</span>
+            </h1>
+
+            <h2>
+                UI/UX Designer
+            </h2>
+
+            <p class="hero-description">
+
+                Motivated and detail-oriented UI/UX Designer
+                passionate about creating intuitive, visually
+                appealing and user-centered digital experiences.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#projects"
+                    class="button primary-button">
+
+                    View My Work
+
+                </a>
+
+                <a
+                    href="#contact"
+                    class="button secondary-button">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a
+                    href="https://linkedin.com/in/ragavan"
+                    target="_blank">
+
+                    LinkedIn ↗
+
+                </a>
+
+                <a
+                    href="https://github.com/ragavan"
+                    target="_blank">
+
+                    GitHub ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-design">
+
+            <div class="hero-design-inner">
+
+                <div class="hero-design-text">
+                    UI/UX
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <p>
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About Me
+            </h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>
+                    Designing experiences users love.
+                </h3>
+
+                <p>
+
+                    I am a motivated and detail-oriented UI/UX
+                    Designer with a strong understanding of
+                    user-centered design, wireframing,
+                    prototyping and responsive web design.
+
+                </p>
+
+                <p>
+
+                    I am passionate about creating intuitive and
+                    visually appealing user experiences while
+                    continuously learning and contributing to
+                    innovative digital products.
+
+                </p>
+
+
+                <div class="education-box">
+
+                    <span>
+                        EDUCATION
+                    </span>
+
+                    <h4>
+                        B.E. Computer Science and Engineering
+                    </h4>
+
+                    <p>
+                        Annapoorna Engineering College
+                    </p>
+
+                    <p>
+                        Expected Graduation: March 2027
+                    </p>
+
+                    <p class="cgpa">
+                        CGPA: 8
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    UI/UX Design
+                </h3>
+
+                <p>
+                    Figma • Wireframing • Prototyping
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <p>
+                MY TOOLKIT
+            </p>
+
+            <h2>
+                Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <h3>
+                    Figma
+                </h3>
+
+                <p>
+                    UI design, high-fidelity screens
+                    and interactive prototypes.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Wireframing
+                </h3>
+
+                <p>
+                    Creating clear user flows and
+                    structured wireframes.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Prototyping
+                </h3>
+
+                <p>
+                    Designing interactive prototypes
+                    for testing and validation.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    User Research
+                </h3>
+
+                <p>
+                    Understanding user needs and
+                    designing user-centered solutions.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Information Architecture
+                </h3>
+
+                <p>
+                    Organizing content for simple and
+                    intuitive navigation.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Responsive Design
+                </h3>
+
+                <p>
+                    Creating interfaces that work
+                    across different screen sizes.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Interpersonal
+                </h3>
+
+                <p>
+                    Strong communication and
+                    collaboration skills.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Adaptability
+                </h3>
+
+                <p>
+                    Quickly adapting to new tools,
+                    challenges and environments.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <p>
+                    Taking responsibility and
+                    supporting team collaboration.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+
+            <p>
+                SELECTED WORK
+            </p>
+
+            <h2>
+                Projects
+            </h2>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Online Food Delivery App UI/UX Design
+                </h3>
+
+                <p>
+
+                    Designed a clean and intuitive food delivery
+                    mobile application using Figma.
+
+                    Created user flows, wireframes,
+                    high-fidelity screens and interactive
+                    prototypes.
+
+                    Focused on improving the ordering and
+                    checkout experience using a
+                    user-centered design approach.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Figma</span>
+                    <span>Wireframing</span>
+                    <span>Prototyping</span>
+                    <span>UI/UX</span>
+
+                </div>
+
+                <a href="#contact" class="project-link">
+                    Discuss Project →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    E-Commerce Mobile App UI/UX Design
+                </h3>
+
+                <p>
+
+                    Designed a modern and user-friendly
+                    e-commerce mobile application using Figma.
+
+                    Created wireframes, high-fidelity UI screens
+                    and interactive prototypes.
+
+                    Focused on simple navigation, responsive
+                    layouts, usability and accessibility.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Figma</span>
+                    <span>UI Design</span>
+                    <span>UX</span>
+                    <span>Prototyping</span>
+
+                </div>
+
+                <a href="#contact" class="project-link">
+                    Discuss Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTERNSHIP
+    ========================== -->
+
+    <section id="experience">
+
+        <div class="section-heading">
+
+            <p>
+                PROFESSIONAL DEVELOPMENT
+            </p>
+
+            <h2>
+                Internship
+            </h2>
+
+        </div>
+
+
+        <div class="experience">
+
+            <div class="experience-date">
+
+                UI/UX
+                <br>
+                Certification
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Professional UI/UX Design Certification
+                </h3>
+
+                <h4>
+                    Practical UI/UX Design Training
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Hands-on experience in Figma.
+                    </li>
+
+                    <li>
+                        Practiced user-centered design.
+                    </li>
+
+                    <li>
+                        Created wireframes and prototypes.
+                    </li>
+
+                    <li>
+                        Worked on responsive web interface design.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENT
+    ========================== -->
+
+    <div class="achievement">
+
+        <div>
+
+            <p class="achievement-label">
+                ACHIEVEMENT
+            </p>
+
+            <h2>
+                GreenBuild – Sustainable Building Consultancy Platform
+            </h2>
+
+            <p>
+
+                Participated in a presentation with a UI/UX concept
+                for a platform connecting clients with sustainable
+                building consultants.
+
+                Focused on intuitive navigation and eco-friendly
+                design showcases.
+
+            </p>
+
+        </div>
+
+        <div class="award">
+            🏆
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+
+            <p>
+                LET'S CONNECT
+            </p>
+
+            <h2>
+                Contact Me
+            </h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Let's create something great.
+                </h3>
+
+                <p>
+
+                    Interested in working together or discussing
+                    a UI/UX project? Feel free to reach out.
+
+                </p>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <p>
+                        ragavan14333@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <p>
+                        824-811-3917
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>
+                        LinkedIn
+                    </strong>
+
+                    <p>
+                        linkedin.com/in/ragavan
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Your message"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button primary-button">
+
+                    Send Message →
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Ragavan A. All Rights Reserved.
+        </p>
+
+        <p>
+            UI/UX Designer • Figma • User-Centered Design
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        function toggleMenu() {
+
+            const navLinks =
+                document.getElementById("navLinks");
+
+            navLinks.classList.toggle("active");
+
+        }
+
+
+        function closeMenu() {
+
+            const navLinks =
+                document.getElementById("navLinks");
+
+            navLinks.classList.remove("active");
+
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                const email =
+                    document.getElementById("email").value;
+
+                const message =
+                    document.getElementById("message").value;
+
+
+                if (
+                    name === "" ||
+                    email === "" ||
+                    message === ""
+                ) {
+
+                    alert(
+                        "Please fill in all the fields."
+                    );
+
+                    return;
+
+                }
+
+
+                alert(
+                    "Thank you, " +
+                    name +
+                    "! Your message has been received."
+                );
+
+
+                document
+                    .getElementById("contactForm")
+                    .reset();
+
+            });
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================== */
+
+        const elements =
+            document.querySelectorAll(
+                ".skill, .project, .experience, .about-card"
+            );
+
+
+        elements.forEach(function (element) {
+
+            element.style.opacity = "0";
+
+            element.style.transform =
+                "translateY(30px)";
+
+            element.style.transition =
+                "all 0.7s ease";
+
+        });
+
+
+        function revealElements() {
+
+            elements.forEach(function (element) {
+
+                const position =
+                    element.getBoundingClientRect().top;
+
+
+                if (
+                    position <
+                    window.innerHeight - 80
+                ) {
+
+                    element.style.opacity = "1";
+
+                    element.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealElements
+        );
+
+
+        revealElements();
+
+    </script>
+
+
+</body>
+
+</html>
+```
